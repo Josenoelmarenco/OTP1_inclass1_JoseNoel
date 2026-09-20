@@ -8,6 +8,14 @@ public class TemperatureConverter {
         return (celsius * 9 / 5) + 32;
     }
 
+    /**
+     * Converts a temperature from Kelvin to Celsius.
+     * Formula: C = K - 273.15  (example: 300 K -> 26.85 C)
+     */
+    public double kelvinToCelsius(double kelvin) {
+        return kelvin - 273.15;
+    }
+
     public boolean isExtremeTemperature(double celsius) {
         return celsius < -40 || celsius > 50;
     }
