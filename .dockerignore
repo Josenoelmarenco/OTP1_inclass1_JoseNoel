@@ -1,0 +1,14 @@
+# Keep the Docker build context small and clean.
+# We only need target/temperature-converter.jar, so exclude the rest.
+.git
+.idea
+docs
+src
+*.iml
+.DS_Store
+target/classes
+target/test-classes
+target/generated-sources
+target/generated-test-sources
+target/maven-status
+target/site

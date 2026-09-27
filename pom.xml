@@ -24,7 +24,24 @@
     </dependencies>
 
     <build>
+        <!-- Fixed jar name so the Dockerfile always finds target/temperature-converter.jar -->
+        <finalName>temperature-converter</finalName>
+
         <plugins>
+            <!-- Makes the jar executable: sets Main-Class in the manifest -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
             <!-- JaCoCo: measures how much code the tests execute -->
             <plugin>
                 <groupId>org.jacoco</groupId>
