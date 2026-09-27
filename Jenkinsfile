@@ -8,8 +8,11 @@ pipeline {
     }
 
     environment {
+        // Make Docker (and Homebrew tools) reachable from the Jenkins service on macOS.
+        // Jenkins starts with a minimal PATH, so we prepend the usual install locations.
+        PATH = "/usr/local/bin:/opt/homebrew/bin:${PATH}"
         // Docker Hub namespace/repository for the image
-        IMAGE = "josenoelmarenco/temperature-converter"
+        IMAGE = "jnmarenco/temperature-converter"
     }
 
     stages {
